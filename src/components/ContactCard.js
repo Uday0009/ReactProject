@@ -1,15 +1,15 @@
 import React from "react";
-import pic from "./person.png"
+import pic from "./person.png";
 const ContactCard=(props)=>{
    // function to render contacts 
-   const {name,email}=props.contact
+   const {name,email}=props.contact;
             return (
                   
                   <div className="item">
                      <img className="ui avatar image" src={pic} alt="pic"/>
                      <div className="content">
                         <div className="header">{name}</div>
-                       <div>{email}</div>
+                       <div  className="header">{email}</div>
                        </div>
                         <i className="trash alternate outline icon"
                   style={{color:"blue"}}
@@ -17,4 +17,4 @@ const ContactCard=(props)=>{
                   </div>
             );
          };
-export default ContactCard
+export default ContactCard;

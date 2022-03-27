@@ -12,7 +12,7 @@ class AddContact extends React.Component{
       }
       this.props.addContactHandler(this.state);
       this.setState({name:"",email:""});
-   }
+   };
        render(){
            return(
            <div className="ui main">
@@ -30,6 +30,6 @@ class AddContact extends React.Component{
                 </form>
            </div>
            );
-   }
+   };
 }
-export default AddContact
+export default AddContact;

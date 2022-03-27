@@ -1,5 +1,5 @@
 import React from "react";
-const Head=()=>{
+const Heading=()=>{
     return (
        <div className="ui fixed menu">
            <div className="ui container center">
@@ -8,4 +8,4 @@ const Head=()=>{
        </div>
     );
 }
-export default Head;
+export default Heading;
