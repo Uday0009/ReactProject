@@ -3,15 +3,20 @@ class AddContact extends React.Component{
    state={
       name:"",
       email:"",
+      phone:""
    };
    add=(e)=>{
       e.preventDefault();
-      if(this.state.name==="" || this.state.email===""){
+      if(this.state.name==="" || this.state.email==="" || this.state.phone===""){
          alert("All details are manadatory");
          return ;
       }
+      if((this.state.phone).length!=10){
+         alert("Phone Number is of 10 digits");
+          return;
+      }
       this.props.addContactHandler(this.state);
-      this.setState({name:"",email:""});
+      this.setState({name:"",email:"",phone:""});
    };
        render(){
            return(
@@ -25,6 +30,10 @@ class AddContact extends React.Component{
                    <div className="field">
                    <label>Email</label>
                    <input type="email" name="email" placeholder="Name"  value={this.state.email} onChange={(e)=>this.setState({email: e.target.value})}/>
+                   </div>
+                   <div className="field">
+                   <label>Phone Number</label>
+                   <input type="text" name="text" placeholder="Name"  value={this.state.phone} onChange={(e)=>this.setState({phone: e.target.value})}/>
                    </div>
                    <button className="ui button blue">Add</button>
                 </form>
