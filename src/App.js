@@ -10,13 +10,14 @@ function App(){
     console.log(contact)
     setContacts([...contacts,contact]);
   };
-//   useEffect(()=>{
-//     const retrivedContacts=JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY,JSON.stringify(contacts)));
-//    if(retrivedContacts) setContacts(retrivedContacts)
-//   },[contacts]);
-// useEffect(()=>{
-//   localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(contacts));
-// },[contacts]);
+useEffect(()=>{
+  localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(contacts))
+},[contacts]);
+useEffect(()=>{
+ const retriveContacts=JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+ if(retriveContacts)
+ setContacts(retriveContacts)
+},[]);
 return (
       <div className="ui container">
         <Heading/>
